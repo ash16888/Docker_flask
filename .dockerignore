@@ -1,3 +1,4 @@
 # comment
-/Dockerfiles
+/examples
 /.git
+*.md
