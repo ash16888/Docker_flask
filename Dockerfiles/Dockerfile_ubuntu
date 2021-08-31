@@ -1,0 +1,16 @@
+FROM ubuntu:latest
+
+# set a directory for the app
+WORKDIR /usr/src/app
+
+RUN apt-get update && apt-get install -y  python3  && apt-get install python3-pip -y 
+# copy all the files to the container
+COPY . .
+
+# install dependencies
+RUN pip install flask
+# tell the port number the container should expose
+EXPOSE 5000
+
+# run the command
+CMD ["python3", "./app.py"]
